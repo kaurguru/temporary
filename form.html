@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>form</title>
+	<style type="text/css">
+		*{
+			box-sizing: border-box;
+			font-family: Comfortaa,Arial;
+			margin: 0;
+			padding: 0;
+			text-transform: capitalize;
+		}
+		h3{
+			text-align: center;
+		}
+
+		.box{
+			position: absolute;
+			top: 5%;
+			left: 40%;
+			
+			border: 2px solid black;
+			width: 450px;
+			height: 650px;
+			}
+			.heading{
+				margin-bottom: 10px;
+				background-color: #0f47d4;
+				padding: 20px;
+				font-size: 30px;
+				color: white;
+			}
+			form div{
+				margin-bottom:5px;
+				padding: 8px;
+			}
+			label{
+				font-size: 17px;
+				font-weight:bolder;
+				
+
+			}
+			input[type=password],[type=number],[type=text],[type=email]{
+				width: 100%;
+				height: 20px;
+				padding: 14px;
+			}
+			input[type=radio]{
+				margin-top: 15px;
+				margin-right: 10px;
+				margin-left: 5px;
+			}
+          input{
+          	margin-top: 5px;
+          }
+          .submit{
+          	height: 40px;
+          	width: 90px;
+          	background-color:#0f47d4 ;
+          	color: white;
+          	border-radius: 10px;
+          	font-size: 16px;
+          }
+         .formerror{
+         	color: red;
+         	text-align: center;
+         	font-weight: 700;
+         }
+
+
+	</style>
+	<script language="javascript" type="text/javascript">
+    function seterror(id,error){
+    	element =document.getElementById(id);
+    	element.getElementsByIdClassName('formerror')[0].innerHTML =error;
+    }
+
+
+    function validationform()
+
+      {  var retval = true;
+        var name= document.forms['myfrom']["firstname"].value;
+        if(name.length<5){
+        	seterror("name","length of name is too short");
+        	retval = false;
+        }
+
+         if(name.length==0){
+        	seterror("name","length of name is too short");
+        	retval = false;	
+        }
+         if(email.length>15){
+        	seterror("email","length of email is too long");
+        	retval = false;
+        }
+        if(phone.length<10){
+        	seterror("phone","length of phone no. is too short");
+        	retval = false;
+        }
+        if(phone.length>10){
+        	seterror("phone","length of phone no. is too long");
+        	retval = false;
+        }
+
+
+
+
+
+      
+      return retval;
+        }
+</script>
+</head>
+<body>
+	
+<div class="box">
+    <div class="heading">
+         <h3>registration form</h3>
+    </div>
+    <div>
+      <form action =""name="myform" onsubmit=" return validationfrom()" method="post"> 
+        <div id="name">
+        	<label> first name</label><br>
+	        <input type="text" name="fname">
+	        <br><span class="formerror" required></span>
+        </div>
+
+        <div>
+            <label> last name</label><br>
+	        <input type="text" name="lname">
+        </div>
+
+        <div>
+           <label>gender</label><br>
+	       <input type="radio" name="gender">male
+	       <input type="radio" name="gender">female
+	       <input type="radio" name="gender">others
+        </div>
+
+        <div id="email">
+        	<label> email</label><br>
+	       <input type="email" name="email">
+	       <br><span class="formerror" required></span>
+        </div>
+
+        <div id="password">
+        	<label> password</label><br>
+	        <input type="password" name="password">
+	        <br><span class="formerror" required></span>
+        </div>
+
+        <div id="phone">
+        	<label> phone number</label><br>
+	        <input type="number" name="phoneno.">
+	        <br><span class="formerror" required> </span>
+        </div>
+
+        <div>
+        	<input type="submit" class="submit" value="submit">
+        </div>
+        </form>
+    </div> 
+
+    
+</div>
+
+</body>
+</html>
+
